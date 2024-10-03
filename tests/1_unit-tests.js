@@ -40,10 +40,11 @@ suite('Unit Tests', function () {
     });
     // #6
     test('#strictEqual, #notStrictEqual', function () {
-      assert.notStrictEqual(6, '6');
-      assert.strictEqual(6, 3 * 2);
-      assert.strictEqual(6 * '2', 12);
-      assert.notStrictEqual([1, 'a', {}], [1, 'a', {}]);
+      assert.notStrictEqual(6, '6'); // num 6 is strict equal to string 6
+      assert.strictEqual(6, 3 * 2);  // num 6 == 3*2 == 6
+      assert.strictEqual(6 * '2', 12); // Javascript type coercion, * sign convert string to num
+      assert.notStrictEqual([1, 'a', {}], [1, 'a', {}]); 
+        // in JS, arrays & objects are ref types, diff instances in memory, so not equal
     });
     // #7
     test('#deepEqual, #notDeepEqual', function () {
